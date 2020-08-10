@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Country" representedClassName=".Country" syncable="YES">
+        <attribute name="titleString" optional="YES" attributeType="String"/>
+        <relationship name="eachRow" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FactRow" inverseName="forCountry" inverseEntity="FactRow"/>
+    </entity>
+    <entity name="FactRow" representedClassName="FactRow" syncable="YES">
+        <attribute name="descriptionstring" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String"/>
+        <attribute name="isImageAvailable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="titlestring" optional="YES" attributeType="String"/>
+        <relationship name="forCountry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="eachRow" inverseEntity="Country"/>
+    </entity>
+    <elements>
+        <element name="Country" positionX="-36" positionY="45" width="128" height="73"/>
+        <element name="FactRow" positionX="-45" positionY="0" width="128" height="133"/>
+    </elements>
+</model>
